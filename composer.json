@@ -1,0 +1,40 @@
+{
+    "name": "units/logger",
+    "description": "Log unit - a versioned logging identity that writes through an injected adapter, on the patterns/unit contract.",
+    "type": "library",
+    "keywords": [
+        "logger",
+        "logging",
+        "unit",
+        "adapter",
+        "console",
+        "dna",
+        "provenance"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "patterns/unit": "^1.0",
+        "patterns/value-object": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5 || ^10.0 || ^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Units\\Logger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Units\\Logger\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
