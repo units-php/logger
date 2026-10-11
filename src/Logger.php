@@ -17,7 +17,7 @@ use Patterns\IUnitSchema;
  * object, no validator, no teach/learn, no events.
  *
  * The adapter is INJECTED, never constructed here - the same seam as
- * Patterns\EventChannel, so a channel-backed adapter can publish logs to
+ * Patterns\EventPublisher, so a channel-backed adapter can publish logs to
  * NATS, Redis or a WebSocket without this class knowing:
  *
  *   Logger::create(['adapter' => new ConsoleLogger(['context' => 'ecom'])]);
