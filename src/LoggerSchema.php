@@ -52,7 +52,6 @@ final class LoggerSchema extends ValueObject implements IUnitSchema
             'version'     => $version,
             'label'       => $label === '' ? $id . ' v' . $version : $label,
             'description' => (string) ($props['description'] ?? ''),
-            'versions'    => array_values((array) ($props['versions'] ?? [])),
         ]);
     }
 
@@ -74,14 +73,6 @@ final class LoggerSchema extends ValueObject implements IUnitSchema
     public function description(): string
     {
         return $this->props['description'];
-    }
-
-    /**
-     * @return list<array<string, string>>
-     */
-    public function versions(): array
-    {
-        return $this->props['versions'];
     }
 
     /**

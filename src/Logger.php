@@ -27,7 +27,7 @@ use Patterns\IUnitSchema;
  */
 final class Logger implements IUnit, ILogger
 {
-    public const VERSION = '1.0.0';
+    public const VERSION = '1.0.1';
 
     private LoggerProps $props;
 
@@ -62,9 +62,8 @@ final class Logger implements IUnit, ILogger
     /**
      * The unit's DNA, available without constructing an instance.
      *
-     * The ledger records **released** versions only - it is what lets a stored
-     * record say which version produced it, so it must not claim versions that
-     * never shipped.
+     * The version is what lets a stored record say which code produced it. What
+     * changed between two versions is the repository's job.
      */
     public static function schema(): LoggerSchema
     {
@@ -73,13 +72,6 @@ final class Logger implements IUnit, ILogger
             'version'     => self::VERSION,
             'label'       => 'Logger v' . self::VERSION,
             'description' => 'Log unit - writes through an injected adapter (Patterns\\IUnit).',
-            'versions'    => [
-                [
-                    'version' => '1.0.0',
-                    'date'    => '2026-10-05',
-                    'notes'   => 'First release - log unit on the patterns/unit contract, writing through an injected adapter',
-                ],
-            ],
         ]);
     }
 

@@ -14,7 +14,7 @@
     "license": "MIT",
     "require": {
         "php": ">=8.1",
-        "patterns/unit": "^1.0",
+        "patterns/unit": "^1.0.1",
         "patterns/value-object": "^2.0"
     },
     "require-dev": {

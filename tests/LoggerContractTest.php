@@ -132,19 +132,12 @@ final class LoggerContractTest extends TestCase
         $this->assertNotSame('', $dna->description());
     }
 
-    public function testTheLedgerRecordsTheReleasedVersion(): void
+    public function testTheDnaCarriesIdentityAndNoLedger(): void
     {
-        $versions = $this->logger()->dna()->versions();
-
-        $this->assertNotSame([], $versions, 'the ledger must not be empty');
-
-        $released = end($versions);
-
-        $this->assertIsArray($released);
         $this->assertSame(
-            Logger::VERSION,
-            $released['version'],
-            'the version the unit reports must appear in its own ledger - a version that never shipped is not provenance'
+            ['id', 'version', 'label', 'description'],
+            array_keys($this->logger()->dna()->toArray()),
+            'the DNA is identity; a changelog of released versions is the repository job'
         );
     }
 

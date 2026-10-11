@@ -175,7 +175,6 @@ $dna = LoggerSchema::create($record['dna']);
 
 $dna->id();       // 'log'
 $dna->version();  // '1.0.0'  - which logger wrote this line
-$dna->versions(); // the version ledger, oldest first
 ```
 
 A log line usually carries a timestamp and a context. When a threshold changed,
@@ -188,7 +187,7 @@ for a health endpoint or an admin screen:
 ```php
 Logger::schema()->label();        // Logger v1.0.0
 Logger::schema()->description();
-Logger::schema()->versions();     // [{version, date, notes}, ...]
+Logger::schema()->version();      // '1.0.0'
 ```
 
 ## The console adapter
